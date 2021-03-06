@@ -1,7 +1,18 @@
+import javax.swing.*;
 class project
 {
 	public static void main(String[] args) 
 	{
-		System.out.println("Starting Project");		
+		ProjectJFrame frame = new ProjectJFrame();
+		frame.setVisible(true);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 	}	
+}
+
+class ProjectJFrame extends JFrame
+{
+	ProjectJFrame()
+	{
+
+	}
 }
