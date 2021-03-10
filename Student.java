@@ -53,46 +53,28 @@ class Student extends JPanel
 	}
 }
 
-class StudentLogin extends JPanel
-{
-	JButton backB;
-	Font font1;
-	StudentLogin (ProjectJFrame f)
-	{
-		setLayout(null);
-
-		font1 = new Font ("Castellar", Font.BOLD, 18);
-		
-
-		backB = new JButton ("Home");
-		backB.setBounds (30, 700, 200, 50);
-		backB.setForeground (Color.RED);
-		backB.setBackground (Color.BLACK);
-		backB.setFont (font1);
-		add (backB);
-		backB.addActionListener (f);
-
-		
-	}
-	public void paintComponent (Graphics g)
-	{
-		g.drawImage (new ImageIcon("bg.png").getImage (), 0, 0, null);
-	}
-}
-
-
 class StudentRegister extends JPanel
 {
 	JButton backB;
-	Font font1;
+	Font font1, font2;
+	JLabel heading;
+	JLabel name, email, cno, password;
 	StudentRegister (ProjectJFrame f)
 	{
 		setLayout(null);
 
 		font1 = new Font ("Castellar", Font.BOLD, 18);
-		
+		font2 = new Font ("Franklin Gothic Heavy", Font.BOLD, 50);
 
-		backB = new JButton ("Home");
+		heading = new JLabel ("Student Registeration Form");
+		heading.setBounds (175, 50, 700, 60);
+		heading.setForeground (Color.BLACK);
+		heading.setFont (font2);
+		add (heading);
+
+
+
+		backB = new JButton ("Back");
 		backB.setBounds (30, 700, 200, 50);
 		backB.setForeground (Color.RED);
 		backB.setBackground (Color.BLACK);
@@ -107,4 +89,43 @@ class StudentRegister extends JPanel
 		g.drawImage (new ImageIcon("bg.png").getImage (), 0, 0, null);
 	}
 }
+
+
+class StudentLogin extends JPanel
+{
+	JButton backB;
+	Font font1, font2;
+	JLabel heading;
+	JLabel name, email, cno, password;
+	StudentLogin (ProjectJFrame f)
+	{
+		setLayout(null);
+
+		font1 = new Font ("Castellar", Font.BOLD, 18);
+		font2 = new Font ("Franklin Gothic Heavy", Font.BOLD, 50);
+
+		heading = new JLabel ("Student Login Form");
+		heading.setBounds (175, 50, 700, 60);
+		heading.setForeground (Color.BLACK);
+		heading.setFont (font2);
+		add (heading);
+
+
+
+		backB = new JButton ("Back");
+		backB.setBounds (30, 700, 200, 50);
+		backB.setForeground (Color.RED);
+		backB.setBackground (Color.BLACK);
+		backB.setFont (font1);
+		add (backB);
+		backB.addActionListener (f);
+
+		
+	}
+	public void paintComponent (Graphics g)
+	{
+		g.drawImage (new ImageIcon("bg.png").getImage (), 0, 0, null);
+	}
+}
+
 

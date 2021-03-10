@@ -22,6 +22,8 @@ class ProjectJFrame extends JFrame implements ActionListener
 	Admin admin;
 	About about;
 	Student student;
+	StudentRegister studentRegister;
+	StudentLogin studentLogin;
 	ProjectJFrame ()
 	{
 		card = new CardLayout();
@@ -30,18 +32,31 @@ class ProjectJFrame extends JFrame implements ActionListener
 		about = new About(this);
 		admin = new Admin(this);
 		student = new Student(this);
+		studentLogin = new StudentLogin(this);
+		studentRegister = new StudentRegister(this);
+
 		cn.add ("home", home);
 		cn.add ("about", about);
 		cn.add ("admin", admin);
 		cn.add ("student", student);
+		cn.add ("studentLogin", studentLogin);
+		cn.add ("studentRegister", studentRegister);
 	}
 	public void actionPerformed (ActionEvent e)
 	{
 		if (e.getSource () == home.aboutB) card.show (cn, "about");
 		else if (e.getSource () == home.adminLB) card.show (cn, "admin");
 		else if (e.getSource () == home.studentLB) card.show (cn, "student");
+
 		else if (e.getSource () == about.backB) card.show (cn, "home");
 		else if (e.getSource () == admin.backB) card.show (cn, "home");
+
 		else if (e.getSource () == student.backB) card.show (cn, "home");
+		else if (e.getSource () == student.registerB) card.show (cn, "studentRegister");
+		else if (e.getSource () == student.loginB) card.show (cn, "studentLogin");
+
+		else if (e.getSource () == studentRegister.backB) card.show (cn, "student");
+		
+		else if (e.getSource () == studentLogin.backB) card.show (cn, "student");
 	}
 }
